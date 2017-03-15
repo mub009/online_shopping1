@@ -11,7 +11,7 @@ use yii\web\Controller;
 use app\models\SalesReport;
 
 /**
- * SalesreportAdminController implements the 
+ * SalesreportAdminController implements the controller
  */
 class SalesreportAdminController extends \yii\web\Controller
 {
