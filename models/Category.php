@@ -1,16 +1,18 @@
 <?php
 
+
+/**
+* @author Mubashir <pro.mubashir@outlook.com>
+* created date : 15/03/2017
+*/
+
+
 namespace app\models;
 
 use Yii;
 use yii\base\Model;
 
-/**
- * LoginForm is the model behind the login form.
- *
- * @property User|null $user This property is read-only.
- *
- */
+
 class category extends Model
 {
     public $category;
@@ -28,6 +30,11 @@ class category extends Model
     {
         return 'tbl_categories';
     }
+ /**
+     * rules its function and validate datas
+     * @parm no param
+     * @return no param
+     */
 
     public function rules()
     {

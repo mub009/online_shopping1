@@ -6,13 +6,30 @@ use app\models\TblCategories;
 use yii;
 
 
+/**
+* @author Mubashir <pro.mubashir@outlook.com>
+* created date : 15/03/2017
+*/
+
+
 class CategoryadminController extends \yii\web\Controller
 {
+        /**
+     * actionIndex its function and calling index page
+     * @parm no param
+     * @return model object
+     */
+
     public function actionIndex()
     {
         return $this->render('index');
     }
 
+    /**
+     * actionAdd its function and showing adding category page
+     * @parm no param
+     * @return 
+     */
     public function actionAdd()
     {
 
@@ -47,7 +64,14 @@ class CategoryadminController extends \yii\web\Controller
 
     }
 
-    function display()
+
+    /**
+     * actionDisplay its function and showing adding category page
+     * @parm no param
+     * @return 
+     */
+
+    function actionDisplay()
     {
 
     	

@@ -1,5 +1,12 @@
 <?php
 
+
+/**
+* @author Mubashir <pro.mubashir@outlook.com>
+* created date : 15/03/2017
+*/
+
+
 namespace app\models;
 
 use Yii;
@@ -50,6 +57,13 @@ class TblCategories extends \yii\db\ActiveRecord
     {
         return $this->hasMany(TblProduct::className(), ['Fk_int_categories_id' => 'Pk_int_categories_id']);
     }
+
+
+     /**
+     * addcategory its function and insert data into tables
+     * @parm $category
+     * @return save values
+     */
 
     public function addcategory($category)
     {
