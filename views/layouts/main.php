@@ -67,9 +67,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Mubashir</p>
+        <p class="pull-left">&copy; Shopping</p>
 
-        <p class="pull-right">Create By mubashir</p>
+        <p class="pull-right">Create By shopping</p>
     </div>
 </footer>
 
