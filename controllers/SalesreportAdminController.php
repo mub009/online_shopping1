@@ -1,10 +1,18 @@
 <?php
-
+/**
+* @author athirakrishnanp
+* @version 1.0
+* @created date : 13/03/2017
+* @modified date : 15/03/2017
+*/
 namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use app\models\SalesReport;
 
+/**
+ * SalesreportAdminController implements the controller
+ */
 class SalesreportAdminController extends \yii\web\Controller
 {
     public function actionIndex()
@@ -12,6 +20,11 @@ class SalesreportAdminController extends \yii\web\Controller
         return $this->render('index');
     }
 
+    /**
+    * Shows sales report
+    * @param no param
+    * @return date
+    */
     public function actionSales()
     {
         $model = new SalesReport();
@@ -36,6 +49,9 @@ class SalesreportAdminController extends \yii\web\Controller
         
     }
 
+    /**
+    
+
     public function actionCompare()
     {
         $model = new SalesReport();
@@ -45,8 +61,8 @@ class SalesreportAdminController extends \yii\web\Controller
     }
 
     
-       // return $this->render('insert',['data'=>$data]);
+        return $this->render('insert',['data'=>$data]);
     
-    
+    */
 
 }

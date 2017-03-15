@@ -1,4 +1,10 @@
 <?php
+/**
+* @author fayiza 
+* @version 1.0
+* @created date 14/03/17
+* @modified date 15/03/17
+*/
 /* @var $this yii\web\View */
 use yii\helpers\Html;
 use yii\widget\ActiveForm
