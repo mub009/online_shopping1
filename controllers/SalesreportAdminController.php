@@ -33,12 +33,12 @@ class SalesreportAdminController extends \yii\web\Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate()) 
         {
             //valid data received in $model
-            echo $model->fromdate;
-            echo $model->todate;
-            die();
-            $data = $model->comparedate();
+            //echo $model->fromdate;
+            //echo $model->todate;
+        
+            $data = $model->comparedate($model->fromdate,$model->todate);
             print_r($data);
-            //return $this->render('insert',['data'=>$data]); 
+            return $this->render('insert',['data'=>$data]); 
 
             //return $this->render('index', ['model' => $model]);
         } 
@@ -49,20 +49,5 @@ class SalesreportAdminController extends \yii\web\Controller
         
     }
 
-    /**
-    
-
-    public function actionCompare()
-    {
-        $model = new SalesReport();
-        $data = $model->comparedate();
-        //print_r($data);
-        return $this->render('insert',['data'=>$data]);
-    }
-
-    
-        return $this->render('insert',['data'=>$data]);
-    
-    */
 
 }
