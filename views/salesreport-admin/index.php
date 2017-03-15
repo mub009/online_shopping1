@@ -11,6 +11,7 @@ use yii\widgets\ActiveField;
 use yii\helpers\ArrayHelper;
 
 ?>
+<br><br>
 <h2><b><u><font color="green">SALES REPORT</font></u></h2><br>
 <div style="float: left; height: 100px; width: 200px">
 <?php $form = ActiveForm::begin(); ?>
