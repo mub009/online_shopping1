@@ -8,13 +8,20 @@
 //echo "inserted";
 //print_r($data);
 $count=count($data);
+echo "<table>";
 for($i=0;$i<$count;$i++)
 {
-	echo "<table>";
-	echo $data[$i]['vchr_first_name'];
-	echo $data[$i]['vchr_last_name'];
+	
+	echo "first_name"." - ".$data[$i]['vchr_first_name']."<br>";
+	echo "last.name"." - ".$data[$i]['vchr_last_name']."<br>";
+	echo "age"." - ".$data[$i]['vchr_age']."<br>";
+	echo "mobile_number"." - ".$data[$i]['int_mobile_number']."<br>";
+	echo "address"." - ".$data[$i]['text_address']."<br>";
+	echo "order_status"." - ".$data[$i]['order_status']."<br>";
 	echo "<br>";
-	echo "</table>";
+	
 }
+echo "</table>";
+
 
 ?>
