@@ -1,5 +1,8 @@
 <?php
-
+/**
+* @author husnath <husnathpalakkal773@gmail.com>
+* created date : 15/03/2017
+**/
 namespace app\controllers;
 use app\models\TblSubcategory;
 use yii;

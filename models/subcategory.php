@@ -1,5 +1,8 @@
 <?php
-
+/**
+* @author husnath <husnathpalakkal773@gmail.com>
+* created date : 15/03/2017
+**/
 namespace app\models;
 
 use Yii;
@@ -17,7 +20,7 @@ class subcategory extends \yii\db\ActiveRecord
     public $category_name;
     public $subcategory_name;
     public $subcategory_rename;
-        public $category_box;
+    public $category_box;
     public $rememberMe = true;
     //public $Category_Name;
 
@@ -25,7 +28,9 @@ class subcategory extends \yii\db\ActiveRecord
 
 
     /**
-     * @return array the validation rules.
+     * @function rules used for form data validation
+     * @param no param
+     * @return have no return value
      */
     public function rules()
     {
@@ -37,24 +42,37 @@ class subcategory extends \yii\db\ActiveRecord
         ];
     }
 
+   
     /**
-     * Validates the password.
-     * This method serves as the inline validation for password.
-     *
-     * @param string $attribute the attribute currently being validated
-     * @param array $params the additional name-value pairs given in the rule
+     * @function addUserDetails used for add data to database
+     * @param $category_name is main category name
+     * @param $subcategory_name is sub category name
+     * @return have no return value
      */
+
     public function addUserDetails($category_name,$subcategory_name)
     {
         $this->Vchr_main_Categorie=$category_name;
         $this->Vchr_sub_Categorie=$subcategory_name;
         $this->save();
     }
+    /**
+     * @function deleteUserDetails used for delete data from database
+     * @param $category_name is main category name
+     * @param $subcategory_name is sub category name
+     * @return have no return value
+     */
     public function deleteUserDetails($category_name,$subcategory_name)
     {
         $this->Vchr_main_Categorie=$category_name;
         $this->Vchr_sub_Categorie=$subcategory_name;
     }
+    /**
+     * @function editUserDetails used for rename data from database
+     * @param $category_name is main category name
+     * @param $subcategory_name is sub category name
+     * @return have no return value
+     */
     public function editUserDetails($category_name,$subcategory_name)
     {
         $this->Vchr_main_Categorie=$category_name;
