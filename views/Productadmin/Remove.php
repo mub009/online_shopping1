@@ -26,20 +26,13 @@ use yii\widgets\ActiveForm;
     $maxvalues=['Mobile' => 'mobile','laptop' => 'laptop'];
     echo $form->field($model,'subcategory')->dropDownList($maxvalues);
     ?>
-                  <?=$form->field($model,'item_name')?>
-
-                  <?=$form->field($model,'image')?>
-
-                   
-
-                   <?=$form->field($model,'price')?>
-
-                   
-                   <?=$form->field($model,'product_details')->textarea()?>
-
+  <?=$form->field($model,'item_name')?>
+  <?=$form->field($model,'image')?>
+  <?=$form->field($model,'price')?>
+  <?=$form->field($model,'product_details')->textarea()?>
 
     <div class="form-group">
-        <?= Html::submitButton('Add', ['class' => 'btn btn-primary pull-right']) ?>  
+        <?= Html::submitButton('Remove', ['class' => 'btn btn-primary pull-right']) ?>  
     </div></div> 
 
 <?php ActiveForm::end(); ?>

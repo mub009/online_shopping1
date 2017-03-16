@@ -37,7 +37,6 @@ class SalesreportAdminController extends \yii\web\Controller
             //echo $model->todate;
         
             $data = $model->comparedate($model->fromdate,$model->todate);
-            print_r($data);
             return $this->render('insert',['data'=>$data]); 
 
             //return $this->render('index', ['model' => $model]);
