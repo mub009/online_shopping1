@@ -85,10 +85,10 @@ class TblCategories extends \yii\db\ActiveRecord
     {
 
 
-     $data=yii::$app->db->createCommand("SELECT * 
+  return $data=yii::$app->db->createCommand("SELECT * 
 FROM  `tbl_categories`")->queryall();
 
-print_r($data);
+
     
     }
 

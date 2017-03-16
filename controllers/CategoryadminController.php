@@ -22,7 +22,53 @@ class CategoryadminController extends \yii\web\Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        
+     $model_view=new TblCategories();
+    
+      $data=$model_view->views();
+      
+      //print_r($data);die();
+    
+    // return $this->render('views',['data'=>$data]);  
+      
+ 
+      //  return $this->render('index');
+
+
+          $model=new Category();
+       
+
+        if($model->load(yii::$app->request->post()) && $model->validate())
+        {
+            if(isset($_POST['add']))
+            {
+                $modelc=new TblCategories();
+                $data=$modelc->addcategory($model->category);
+                if($data)
+                {
+                    echo "addded";
+                }
+                else
+                {
+                    echo "fail";
+                }
+
+
+            }
+        }   
+
+        else
+        {
+
+            return $this->render('views',['model'=>$model,'data'=>$data]);
+
+        }
+
+
+
+
+
+
     }
 
     /**
@@ -34,6 +80,7 @@ class CategoryadminController extends \yii\web\Controller
     {
 
        $model=new Category();
+       
 
     	if($model->load(yii::$app->request->post()) && $model->validate())
     	{
@@ -53,6 +100,7 @@ class CategoryadminController extends \yii\web\Controller
 
     		}
     	}	
+
     	else
     	{
 
@@ -71,15 +119,15 @@ class CategoryadminController extends \yii\web\Controller
      * @return 
      */
 
-    function actionDisplay()
+   public function actionDisplay()
     {
 
-    	$model=new TblCategories();
+    	$model_view=new TblCategories();
     
-        $model->views()
+      $data=$model_view->views();
+      //print_r($data);die();
     
-    
-            //print_r($model);
+     return $this->render('views',['data'=>$data]);  
         
     }
 
