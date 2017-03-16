@@ -74,7 +74,13 @@ class CategoryadminController extends \yii\web\Controller
     function actionDisplay()
     {
 
-    	
+    	$model=new TblCategories();
+    
+        $model->views()
+    
+    
+            //print_r($model);
+        
     }
 
 }

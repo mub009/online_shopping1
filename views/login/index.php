@@ -1,9 +1,12 @@
 <?php
 /* @var $this yii\web\View */
-
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+$this->title = 'Login';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
+<div style="height:330px;width:500px;border:2px solid #13164E;text-align:center;margin-left:300px">
+<h2 style="align:center">Login</h2><br><br>
 <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'username') ?>
