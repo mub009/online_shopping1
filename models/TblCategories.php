@@ -73,6 +73,25 @@ class TblCategories extends \yii\db\ActiveRecord
         return $this->save();
     }
 
+    /**
+     * views its function and views a values from database
+     * @parm $category
+     * @return save values
+
+     */
+ 
+
+    public function views()
+    {
+
+
+     $data=yii::$app->db->createCommand("SELECT * 
+FROM  `tbl_categories`")->queryall();
+
+print_r($data);
+    
+    }
+
 
 
 
