@@ -19,6 +19,9 @@ class ProductadminController extends \yii\web\Controller
     public function actionIndex()
     {
         return $this->render('index');
+
+
+
     }
     public function actionAdd()
     {
@@ -32,6 +35,7 @@ class ProductadminController extends \yii\web\Controller
     	if($model->load(yii::$app->request->post()) && $model->validate())
     	{
 
+       print_r($model);
 
 
     	}
@@ -45,4 +49,43 @@ class ProductadminController extends \yii\web\Controller
 
     }
 
-}
+  public function actionRemove()
+    {
+
+       $model = new Product();
+
+        if($model->load(yii::$app->request->post()) && $model->validate())
+        {
+
+            echo "deleted";
+            $model->deleteUserDetails($model->category_name,$model->subcategory_name);
+
+            
+        }
+        else
+        {
+            return $this->render('remove',['model'=>$model]);
+
+        }
+    }
+
+ public function actionEdit()
+    {
+
+       $model = new Product();
+
+        if($model->load(yii::$app->request->post()) && $model->validate())
+        {
+
+            echo "renamed";
+            $model->editUserDetails($model->category_name,$model->subcategory_name,$model->subcategory_rename);
+            
+        }
+        else
+        {
+            return $this->render('edit',['model'=>$model]);
+
+        }
+
+    }
+}   
