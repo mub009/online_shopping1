@@ -75,6 +75,6 @@ class TblOrder extends \yii\db\ActiveRecord
 */
     public function getuser()
     {
-        return $data=Yii::$app->db->createCommand(" SELECT vchr_first_name,vchr_last_name,int_mobile_number,vchr_gender,vchr_age,text_address FROM tbl_registration JOIN tbl_order ON tbl_registration.pk_int_registration_id=tbl_order.fk_int_user_id")->queryAll();
+        return $data=Yii::$app->db->createCommand(" SELECT vchr_first_name,vchr_last_name,int_mobile_number,vchr_gender,vchr_age,text_address,order_status FROM tbl_registration JOIN tbl_order ON tbl_registration.pk_int_registration_id=tbl_order.fk_int_user_id")->queryAll();
     }
 }

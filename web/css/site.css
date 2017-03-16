@@ -113,3 +113,16 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+.navbar-inverse {
+  background-color: #13164e;
+  /*border-color: #080808;*/
+  height:100px;
+}
+.navbar-header {
+    float: left;
+    background-color:#fff;
+    margin-top:20px;
+    border-radius:150px;
+    border:1px solid #FFF;
+    color: #13164e;
+  }
