@@ -3,10 +3,10 @@
 * @author fayiza 
 * @version 1.0
 * @created date 14/03/17
-* @modified date 15/03/17
+* @modified date 16/03/17
 */
 namespace app\models;
-
+use app\models\TblRegistration;
 use Yii;
 
 /**
@@ -75,6 +75,11 @@ class TblOrder extends \yii\db\ActiveRecord
 */
     public function getuser()
     {
-        return $data=Yii::$app->db->createCommand(" SELECT vchr_first_name,vchr_last_name,int_mobile_number,vchr_gender,vchr_age,text_address FROM tbl_registration JOIN tbl_order ON tbl_registration.pk_int_registration_id=tbl_order.fk_int_user_id")->queryAll();
+        return $data=Yii::$app->db->createCommand("  SELECT tbl_registration.pk_int_registration_id,tbl_registration.vchr_first_name,tbl_registration.vchr_last_name,tbl_registration.int_mobile_number,tbl_registration.text_address,tbl_product.pk_int_product_id,tbl_product.vchr_product_name,tbl_product.int_price,tbl_order.pk_int_order_id,tbl_order.date_order_date FROM tbl_registration JOIN tbl_order ON (tbl_registration.pk_int_registration_id = tbl_order.fk_int_user_id) JOIN tbl_product ON (tbl_order.fk_int_product_id = tbl_product.pk_int_product_id);")->queryAll();
+       // return TblOrder::find()
+        
+       // ->asArray()
+       // ->all();
     }
+    
 }

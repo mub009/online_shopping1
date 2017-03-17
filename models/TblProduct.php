@@ -39,63 +39,39 @@ class TblProduct extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'Pk_int_product_id' => 'Pk Int Product ID',
-            'Vchr_product_name' => 'Vchr Product Name',
-            'Vchr_img_path' => 'Vchr Img Path',
-            'Int_Price' => 'Int  Price',
-            'text_details' => 'Text Details',
-            'Fk_int_product_date_id' => 'Fk Int Product Date ID',
-            'Fk_int_product_stock' => 'Fk Int Product Stock',
-            'Fk_int_categories_id' => 'Fk Int Categories ID',
-        ];
-    }
+   
+   
+
 
     /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getTblOrders()
-    {
-        return $this->hasMany(TblOrder::className(), ['fk_int_product_id' => 'Pk_int_product_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getFkIntProductDate()
-    {
-        return $this->hasOne(TblProductDate::className(), ['Pk_int_product_id' => 'Fk_int_product_date_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getFkIntProductStock()
-    {
-        return $this->hasOne(TblProductStock::className(), ['Pk_int_product_stock' => 'Fk_int_product_stock']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
+     * @function addUserDetails used for add data to database
+     * @param $category_name is main category name
+     * @param $subcategory_name is sub category name
+     * @return have no return value
      */
 
-
-    public function getFkIntCategories()
+   public function addUserDetails($item_name,$image,$price,$product_details)
     {
-        return $this->hasOne(TblCategories::className(), ['Pk_int_categories_id' => 'Fk_int_categories_id']);
+
+        echo "$item_name"."$image"."$price"."$product_details";
+        $this->Pk_int_product_id="";
+        $this->vchr_product_name=$item_name;
+        $this->vchr_img_path=$image;
+        $this->Int_price=$price;
+        $this->text_details=$product_details;
+        $this->Fk_int_product_date_id=2;
+        $this->Fk_int_product_stock=1;
+        $this->Fk_int_categories_id=2;
+        $this->save();
+        
     }
 
-
-    /**
+ /**
      * readmobiledata its function and reading data from database
      * @param no param
      * @return its reading data only for mobile data from db_online_shopping in database
      */
+
 
      public function readmobiledata()
     {

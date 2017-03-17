@@ -8,27 +8,33 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-index">
 
 
-    <div class="body-content">
-<div class="row">
-<div style="border:dotted;width: 100%;height: 50px;" class="col-lg-12">
-    <div style="padding-top: 10px;">
-    <a href="" >Add Product</a></div>
-    
+   <div class="body-content">
+       <div class="row">
+           <div style="border:1px solid #F5F5F5;height: 30px;border-radius:150px" class="col-lg-2">
+  
+               <a href="" >Add Product</a>
 
-</div>
-        <div class="row">
-            <div class="col-lg-4"  style="width: 20%;height: 900px;float:left;margin-left:0px;">
+           </div>
+           <div style="height: 30px;" class="col-lg-9">
+           </div>
 
-                <h2>Your Favorite</h2>
+           <div style="border:1px solid #F5F5F5;height:30px;border-radius:150px" class="col-lg-1">
+  
+               <p style="text-align:right">
+               <a href="index.php?r=login/login" id="login">Login</a></p>
 
-                
+           </div>
+       </div>
 
-                    <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Mobile Phone &raquo;</a></p>
-                     <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Laptop &raquo;</a></p>
+       <div class="row">
+           <div class="col-lg-4"  style="width: 20%;height: 900px;float:left;margin-left:0px;">
+               <h2>Your Favorite</h2>
+               <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Mobile Phone &raquo;</a></p>
+               <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Laptop &raquo;</a></p>
 
-            </div>
+           </div>
 
-            <div class="col-lg-8" style="width: 80%;height: 900px;float:left;">
+           <div class="col-lg-8" style="width: 80%;height: 900px;float:left;">
                <?php
                     function read_mobile_phone($data_mobile)
                             {
@@ -54,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
                              <div style="padding-top: 100px;"><a href="index.php?r=mobilephone/readmobiledata">More Mobile Phone</a></div></div     
-      <?php
+          <?php
                         }
 
         function read_laptop_data($data_laptop)
