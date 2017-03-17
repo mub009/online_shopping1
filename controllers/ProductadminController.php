@@ -6,6 +6,7 @@
 
 namespace app\controllers;
 use app\models\Product;
+use app\models\TblProduct;
 use yii;
 
 
@@ -31,14 +32,17 @@ class ProductadminController extends \yii\web\Controller
 *@return 
 **/
        $model=new Product();
+       $modeldata=new TblProduct();
 
     	if($model->load(yii::$app->request->post()) && $model->validate())
     	{
+            echo "done";
+            //print_r($model);
+          $modeldata->addUserDetails($model->item_name,$model->image,$model->price,$model->product_details);      
+            
 
-       print_r($model);
 
-
-    	}
+        } 
     	else
     	{
     		return $this->render('index',['model'=>$model]);

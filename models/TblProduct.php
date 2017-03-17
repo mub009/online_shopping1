@@ -42,29 +42,42 @@ class TblProduct extends \yii\db\ActiveRecord
         ];
     }
 
+   
+   
+
+
     /**
-     * @inheritdoc
+<<<<<<< HEAD
+=======
+     * @function addUserDetails used for add data to database
+     * @param $category_name is main category name
+     * @param $subcategory_name is sub category name
+     * @return have no return value
      */
-    public function attributeLabels()
+
+   public function addUserDetails($item_name,$image,$price,$product_details)
     {
-        return [
-            'Pk_int_product_id' => 'Pk Int Product ID',
-            'Vchr_product_name' => 'Vchr Product Name',
-            'Vchr_img_path' => 'Vchr Img Path',
-            'Int_Price' => 'Int  Price',
-            'text_details' => 'Text Details',
-            'Fk_int_product_date_id' => 'Fk Int Product Date ID',
-            'Fk_int_product_stock' => 'Fk Int Product Stock',
-            'Fk_int_categories_id' => 'Fk Int Categories ID',
-        ];
+
+        echo "$item_name"."$image"."$price"."$product_details";
+        $this->Pk_int_product_id="";
+        $this->vchr_product_name=$item_name;
+        $this->vchr_img_path=$image;
+        $this->Int_price=$price;
+        $this->text_details=$product_details;
+        $this->Fk_int_product_date_id=2;
+        $this->Fk_int_product_stock=1;
+        $this->Fk_int_categories_id=2;
+        $this->save();
+        
     }
 
-
-    /**
+ /**
+>>>>>>> ed3ed7e467eca57d8fdf8b83eea13349b70590a3
      * readmobiledata its function and reading data from database
      * @param no param
      * @return its reading data only for mobile data from db_online_shopping in database
      */
+
 
      public function readmobiledata()
     {

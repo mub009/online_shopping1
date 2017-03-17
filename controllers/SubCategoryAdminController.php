@@ -10,74 +10,23 @@ use yii;
 
 class SubcategoryadminController extends \yii\web\Controller
 {
+    /**
+     * @function actionIndex used for add,delete,rename,view the subcategory name
+     * @param no param
+     * @return it return to the index page 
+    */
     public function actionIndex()
     {
-        return $this->render('index');
-    }
-    public function actionAdd()
-    {
-
-       $model = new TblSubcategory();
-
-    	if($model->load(yii::$app->request->post()) && $model->validate())
-    	{
-
-    		echo "done";
-    		$model->addUserDetails($model->subcategory_name);
-            
-    	}
-    	else
-    	{
-    		return $this->render('add',['model'=>$model]);
-
-    	}
-
-
-
-    }
-    public function actionRemove()
-    {
-
-       $model = new subcategory();
-
-    	if($model->load(yii::$app->request->post()) && $model->validate())
-    	{
-
-    		echo "deleted";
-    		$model->deleteUserDetails($model->category_name,$model->subcategory_name);
-
-            
-    	}
-    	else
-    	{
-    		return $this->render('remove',['model'=>$model]);
-
-    	}
-
-
-
-    }
-   
-    public function actionEdit()
-    {
-
-       $model = new subcategory();
-
-    	if($model->load(yii::$app->request->post()) && $model->validate())
-    	{
-
-    		echo "renamed";
-    		$model->editUserDetails($model->category_name,$model->subcategory_name,$model->subcategory_rename);
-            
-    	}
-    	else
-    	{
-    		return $this->render('edit',['model'=>$model]);
-
-    	}
-
-
-
-    }
-
+        $model = new TblSubcategory();
+        $data=$model->viewUserDetails();
+        if($model->load(yii::$app->request->post()) && $model->validate())
+        {
+            echo "done";
+            $model->addUserDetails($model->subcategory_name); 
+        }
+        else
+        {
+            return $this->render('index',['model'=>$model,'data'=>$data]);
+        }
+    }  
 }
