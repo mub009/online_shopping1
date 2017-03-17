@@ -21,13 +21,7 @@ use Yii;
  */
 class TblCategories extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return 'tbl_categories';
-    }
+    
 
     /**
      * @inheritdoc
@@ -39,30 +33,11 @@ class TblCategories extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'Pk_int_categories_id' => 'Pk Int Categories ID',
-            'Vchr_main_Categorie' => 'Vchr Main  Categorie',
-        ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getTblProducts()
-    {
-        return $this->hasMany(TblProduct::className(), ['Fk_int_categories_id' => 'Pk_int_categories_id']);
-    }
-
 
      /**
      * addcategory its function and insert data into tables
      * @parm $category
-     * @return save values
+     * @return its true or false value
      */
 
     public function addcategory($category)

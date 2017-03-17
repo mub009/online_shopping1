@@ -22,14 +22,6 @@ class category extends Model
     private $_user = false;
 
 
-    /**
-     * @return array the validation rules.
-     */
-
-     public static function tableName()
-    {
-        return 'tbl_categories';
-    }
  /**
      * rules its function and validate datas
      * @parm no param

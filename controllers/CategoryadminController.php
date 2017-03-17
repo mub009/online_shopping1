@@ -74,7 +74,7 @@ class CategoryadminController extends \yii\web\Controller
     /**
      * actionAdd its function and showing adding category page
      * @parm no param
-     * @return 
+     * @return else part working 
      */
     public function actionAdd()
     {
@@ -122,12 +122,12 @@ class CategoryadminController extends \yii\web\Controller
    public function actionDisplay()
     {
 
-    	$model_view=new TblCategories();
+    	//$model_view=new TblCategories();
     
-      $data=$model_view->views();
+     // $data=$model_view->views();
       //print_r($data);die();
-    
-     return $this->render('views',['data'=>$data]);  
+    $model=new Category();
+     return $this->render('rename',['model'=>$model]);  
         
     }
 

@@ -24,6 +24,9 @@ use Yii;
 class TblProduct extends \yii\db\ActiveRecord
 {
    
+    /**
+     * @return array the validation rules.
+     */
  
     public function rules()
     {
@@ -56,40 +59,6 @@ class TblProduct extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getTblOrders()
-    {
-        return $this->hasMany(TblOrder::className(), ['fk_int_product_id' => 'Pk_int_product_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getFkIntProductDate()
-    {
-        return $this->hasOne(TblProductDate::className(), ['Pk_int_product_id' => 'Fk_int_product_date_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getFkIntProductStock()
-    {
-        return $this->hasOne(TblProductStock::className(), ['Pk_int_product_stock' => 'Fk_int_product_stock']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-
-
-    public function getFkIntCategories()
-    {
-        return $this->hasOne(TblCategories::className(), ['Pk_int_categories_id' => 'Fk_int_categories_id']);
-    }
-
 
     /**
      * readmobiledata its function and reading data from database
@@ -100,7 +69,7 @@ class TblProduct extends \yii\db\ActiveRecord
      public function readmobiledata()
     {
 
-        return $data=yii::$app->db->createCommand("SELECT  `Vchr_product_name` ,Vchr_main_Categorie,Vchr_sub_Categorie,  `Vchr_img_path` ,  `Int_Price` ,  `Fk_int_categories_id` 
+        return $data=yii::$app->db->createCommand("SELECT  `Vchr_product_name` ,Vchr_main_Categorie,  `Vchr_img_path` ,  `Int_Price` ,  `Fk_int_categories_id` 
 FROM  `tbl_product` 
 JOIN tbl_categories ON Fk_int_categories_id = pk_int_categories_id where Vchr_main_Categorie='mobile'")->queryall();
     }
@@ -114,7 +83,7 @@ JOIN tbl_categories ON Fk_int_categories_id = pk_int_categories_id where Vchr_ma
 
     public function readlaptopdata()
     {
-     return $data=yii::$app->db->createCommand("SELECT  `Vchr_product_name` ,Vchr_main_Categorie,Vchr_sub_Categorie,  `Vchr_img_path` ,  `Int_Price` ,  `Fk_int_categories_id` 
+     return $data=yii::$app->db->createCommand("SELECT  `Vchr_product_name` ,Vchr_main_Categorie,  `Vchr_img_path` ,  `Int_Price` ,  `Fk_int_categories_id` 
 FROM  `tbl_product` 
 JOIN tbl_categories ON Fk_int_categories_id = pk_int_categories_id where Vchr_main_Categorie='laptop'")->queryall();   
     }
@@ -128,7 +97,7 @@ JOIN tbl_categories ON Fk_int_categories_id = pk_int_categories_id where Vchr_ma
 
     public function readmobilemoto()
     {
-     return $data=yii::$app->db->createCommand("SELECT  `Vchr_product_name` ,Vchr_main_Categorie,Vchr_sub_Categorie,  `Vchr_img_path` ,  `Int_Price` ,  `Fk_int_categories_id` 
+     return $data=yii::$app->db->createCommand("SELECT  `Vchr_product_name` ,Vchr_main_Categorie,  `Vchr_img_path` ,  `Int_Price` ,  `Fk_int_categories_id` 
 FROM  `tbl_product` 
 JOIN tbl_categories ON Fk_int_categories_id = pk_int_categories_id where Vchr_sub_Categorie='moto' and Vchr_main_Categorie='mobile'")->queryall();   
     }
@@ -141,7 +110,7 @@ JOIN tbl_categories ON Fk_int_categories_id = pk_int_categories_id where Vchr_su
 
   public function readmobilelenovo()
     {
-     return $data=yii::$app->db->createCommand("SELECT  `Vchr_product_name` ,Vchr_main_Categorie,Vchr_sub_Categorie,  `Vchr_img_path` ,  `Int_Price` ,  `Fk_int_categories_id` 
+     return $data=yii::$app->db->createCommand("SELECT  `Vchr_product_name` ,Vchr_main_Categorie,  `Vchr_img_path` ,  `Int_Price` ,  `Fk_int_categories_id` 
 FROM  `tbl_product` 
 JOIN tbl_categories ON Fk_int_categories_id = pk_int_categories_id where Vchr_main_Categorie='mobile' and Vchr_sub_Categorie='lenovo'")->queryall();   
     }
