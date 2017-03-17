@@ -1,24 +1,21 @@
 <?php
+/**
+* @author Mubashir <pro.mubashir@outlook.com>
+* created date : 15/03/2017
+**/
 
 namespace app\controllers;
 use app\models\Category;
 use app\models\TblCategories;
 use yii;
 
-
-/**
-* @author Mubashir <pro.mubashir@outlook.com>
-* created date : 15/03/2017
-*/
-
-
 class CategoryadminController extends \yii\web\Controller
 {
-        /**
+    /**
      * actionIndex its function and calling index page
      * @parm no param
      * @return model object
-     */
+    **/
 
     public function actionIndex()
     {
@@ -29,13 +26,12 @@ class CategoryadminController extends \yii\web\Controller
      * actionAdd its function and showing adding category page
      * @parm no param
      * @return 
-     */
+    **/
+
     public function actionAdd()
     {
-
-       $model=new Category();
-
-    	if($model->load(yii::$app->request->post()) && $model->validate())
+        $model=new Category();
+        if($model->load(yii::$app->request->post()) && $model->validate())
     	{
     		if(isset($_POST['add']))
     		{
@@ -49,32 +45,11 @@ class CategoryadminController extends \yii\web\Controller
     			{
     				echo "fail";
     			}
-
-
-    		}
+            }
     	}	
     	else
     	{
-
-    		return $this->render('addadmin',['model'=>$model]);
-
-    	}
-
-
-
+            return $this->render('addadmin',['model'=>$model]);
+        }
     }
-
-
-    /**
-     * actionDisplay its function and showing adding category page
-     * @parm no param
-     * @return 
-     */
-
-    function actionDisplay()
-    {
-
-    	
-    }
-
 }
