@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
            <div style="border:1px solid #F5F5F5;height:30px;border-radius:150px" class="col-lg-1">
   
                <p style="text-align:right">
-               <a href="http://localhost/shop/online_shopping1/web/index.php?r=login/login" id="login">Login</a></p>
+               <a href="index.php?r=login/login" id="login">Login</a></p>
 
            </div>
        </div>
