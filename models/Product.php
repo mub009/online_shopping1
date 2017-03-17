@@ -53,11 +53,20 @@ class product extends Model
      * @return have no return value
      */
 
-    public function addUserDetails($category_name,$subcategory_name)
+   public function addUserDetails($item_name,$image,$price,$product_details)
     {
-        $this->Vchr_main_Categorie=$category_name;
-        $this->Vchr_sub_Categorie=$subcategory_name;
+
+        //echo "$item_name"."$image"."$price"."$product_details";
+        //$this->Pk_int_product_id="";
+        $this->vchr_product_name=$item_name;
+        $this->vchr_img_path=$image;
+        $this->Int_price=$price;
+        $this->text_details=$product_details;
+        //$this->Fk_int_product_date_id="";
+        //$this->Fk_int_product_stock="";
+        //$this->Fk_int_categories_id="";
         $this->save();
+        
     }
 
     /**
