@@ -38,10 +38,10 @@ shopping
     <div class="container">
 <div style="width:20%;float:left">
           <table class="table">
-          <tr><td><a href="#">Manage Category</a></td></tr>
-          <tr><td><a href="#">Manage Subcategory</a></td></tr>
-          <tr><td><a href="#">Manage Product</a></td></tr>
-          <tr><td><a href="#">Manage Order</a></td></tr>
+          <tr><td><a href="index.php?r=admincategory">Manage Category</a></td></tr>
+          <tr><td><a href="index.php?r=subcategory">Manage Subcategory</a></td></tr>
+          <tr><td><a href="index.php?r=productadmin">Manage Product</a></td></tr>
+          <tr><td><a href="index.php?r=login/login">Manage Order</a></td></tr>
           </table>
         </div>
         <div style="width:80%;float: left; padding-left: 30px; ">
