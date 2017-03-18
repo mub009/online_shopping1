@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
 <?php $form = ActiveForm::begin(); ?>
   
 <div class="col-lg-4"  style="width: 30%;height: 900px;float:left;margin-left:0px; pa">
-<h2>Rename Subcategory</h2><hr>
+<h2>Product management</h2><hr>
 
 
  
@@ -38,7 +38,7 @@ use yii\widgets\ActiveForm;
                    <?=$form->field($model,'product_details')->textarea()?>
 
     <div class="form-group">
-        <?= Html::submitButton('Confirm', ['class' => 'btn btn-primary pull-right']) ?>
+        <?= Html::submitButton('edit', ['class' => 'btn btn-primary pull-right']) ?>
     </div></div>
 
 <?php ActiveForm::end(); ?>
