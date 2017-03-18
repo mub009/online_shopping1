@@ -25,47 +25,35 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-left'],
-        'items' => [
-            //['label' => 'Home', 'url' => ['/site/index']],
-            //['label' => 'About', 'url' => ['/site/about']],
-            //['label' => 'Contact', 'url' => ['/site/contact']],
-            //['label' => 'Contact', 'url' => ['/site/contact']],
-            //Yii::$app->user->isGuest ? (
-              //  ['label' => 'Login', 'url' => ['/site/login']]
-            //) : (
-              //  '<li>'
-                //. Html::beginForm(['/site/logout'], 'post')
-                //. Html::submitButton(
-                  //  'Logout (' . Yii::$app->user->identity->username . ')',
-                   // ['class' => 'btn btn-link logout']
-                //)
-                //. Html::endForm()
-                //. '</li>'
-            //)
-        ],
-    ]);
-    NavBar::end();
-    ?>
 
+<div id="header" style="height:70px;width:100%;background-color:#00f;padding:10px;">
+<div id="nav" style="height:50px;width:300px;float:right;padding-left:200px;">
+<a href="#" style="color:#fff">Logout</a>
+</div>
+<div id="logo" style="height:50px;width:100px;color:#fff;text-align:center;font-size:30px;padding:7px">
+shopping
+</div>
+
+</div>
     <div class="container" style="margin-top:100px">
+<div style="width:200px;float:left">
+          <table class="table">
+          <tr><td><a href="#">Manage Category</a></td></tr>
+          <tr><td><a href="#">Manage Subcategory</a></td></tr>
+          <tr><td><a href="#">Manage Product</a></td></tr>
+          <tr><td><a href="#">Manage Order</a></td></tr>
+          </table>
+       </div>
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-        <?= $content ?>
+
+
+       
     </div>
 </div>
 
-<footer class="footer">
+<footer id="footer" style="height:70px;width:100%;background-color:#00f;padding:10px;color:#fff">
     <div class="container">
         <p class="pull-left">&copy; Shopping</p>
 
