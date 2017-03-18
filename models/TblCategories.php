@@ -22,7 +22,8 @@ use Yii;
 class TblCategories extends \yii\db\ActiveRecord
 {
     
-
+    public $category;
+    //public $category_box;
     /**
      * @inheritdoc
      */
@@ -40,9 +41,9 @@ class TblCategories extends \yii\db\ActiveRecord
      * @return its true or false value
      */
 
+    
     public function addcategory($category)
     {
-        
 
         $this->Vchr_main_Categorie=$category;
         return $this->save();
